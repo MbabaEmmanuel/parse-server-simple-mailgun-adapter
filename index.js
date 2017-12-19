@@ -18,14 +18,14 @@ var server = ParseServer({
         passwordResetEmail: {
           subject: 'Reset your password',
           pathPlainText: resolve(__dirname, 'password_reset_email.txt'),
-          pathHtml: resolve(__dirname, 'path/to/templates/password_reset_email.html'),
+//           pathHtml: resolve(__dirname, 'path/to/templates/password_reset_email.html'),
           callback: (user) => { return { firstName: user.get('firstName') }}
           // Now you can use {{firstName}} in your templates
         },
         verificationEmail: {
           subject: 'Confirm your account',
           pathPlainText: resolve(__dirname, 'verification_email.txt'),
-          pathHtml: resolve(__dirname, 'path/to/templates/verification_email.html'),
+//           pathHtml: resolve(__dirname, 'path/to/templates/verification_email.html'),
           callback: (user) => { return { firstName: user.get('firstName') }}
           // Now you can use {{firstName}} in your templates
         }
