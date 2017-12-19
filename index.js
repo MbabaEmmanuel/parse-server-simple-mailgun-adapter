@@ -31,5 +31,19 @@ var server = ParseServer({
         }
       }
     }
+    // Serve the Parse API on the /parse URL prefix
+var mountPath = process.env.PARSE_MOUNT || '/parse';
+app.use(mountPath, api);
+
+// Parse Server plays nicely with the rest of your web routes
+app.get('/', function(req, res) {
+//res.status(200).send('Welcome to appname, landing page will be here someday');
+res.redirect('http://appname.com');
+});
+
+var port = process.env.PORT || 1337;
+app.listen(port, function() {
+console.log('parse-server-appname running on port ' + port + '.');
+});
   }
 });
